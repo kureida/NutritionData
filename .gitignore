@@ -4,3 +4,9 @@
 *.jar
 *.war
 *.ear
+
+#Random Folder #
+.metadata
+RemoteSystemsTempFiles
+NutritionData/.metadata
+NutritionData/RemoteSystemsTempFiles
