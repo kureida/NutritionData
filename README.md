@@ -92,8 +92,7 @@ NutritionData
 	7. Call 'git clone [HTTPS clone]'
 		- 7a. Inside [] paste the clone you've copied by clicking the upper left corner of Git Bash->Edit->Paste (ctrl+v does not work)
 	8. Call 'git checkout dev' to switch to dev branch
-**Importing project**
-	9. Go into Java IDE of your choice (Eclipse or IntelliJ)
+	9. (Importing projects from here on) Go into Java IDE of your choice (Eclipse or IntelliJ)
 	10. Using Eclipse
 		- 10A. Open up the workspace to where the repo was cloned (when first opening Eclipse or by clicking File->Switch Workspace->Other)
 		- 10B. Installing M2E for Eclipse
