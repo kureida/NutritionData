@@ -17,3 +17,6 @@ temp-testng-customsuite.xml
 test-output
 .externalToolBuilders
 *~
+eclipse-launch-profiles
+RemoteSystemsTempFiles
+.metadata
