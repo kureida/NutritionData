@@ -82,7 +82,7 @@ NutritionData
 		- 6D. Click 'Ok' again
 		- 6E. Click 'Ok' to finish
 		
-##To install/import/launch project: 
+##To install/import/launch project : 
 	1. Goto https://github.com/kureida/NutritionData
 	2. Fork repo
 	3. Go to your account
