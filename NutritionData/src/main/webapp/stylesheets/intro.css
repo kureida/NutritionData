@@ -94,3 +94,12 @@ a.glidebutton:hover > span:first-child{
     -o-transform: translateY(-100%);
     transform: translateY(-100%);
 }
+
+#tt-2_left_side{
+    display:inline;
+    width:50%;
+}
+#tt-2_right_side{
+    display:inline;
+    width:50%;
+}
