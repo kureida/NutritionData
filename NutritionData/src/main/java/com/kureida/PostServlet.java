@@ -1,8 +1,5 @@
 package com.kureida;
 
-import com.google.appengine.api.datastore.DatastoreService;
-import com.google.appengine.api.datastore.DatastoreServiceFactory;
-import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
@@ -20,10 +17,19 @@ public class PostServlet extends HttpServlet {
         UserService userService = UserServiceFactory.getUserService();
         User user = userService.getCurrentUser();
         NutritionData nDP = new NutritionData();
-        DatastoreService dataStore = DatastoreServiceFactory.getDatastoreService();
-        Entity e = new Entity("apple", "apple");
-        dataStore.put(e);
+        int i = 0;
+        do {
+            nDP.setFood(req.getParameter("typeofFood" + i), req.getParameter("name" + i), req.getParameter("servingSize" + i).replaceAll("[^\\d]", ""), req.getParameter("calories" + i).replaceAll("[^\\d]", ""), req.getParameter("fatCalories" + i).replaceAll("[^\\d]", ""), req.getParameter("totalFatGrams" + i).replaceAll("[^\\d]", ""), req.getParameter("totalFatPercentage" + i).replaceAll("[^\\d]", ""), req.getParameter("satFatGrams" + i).replaceAll("[^\\d]", ""),
+                    req.getParameter("satFatPercentage" + i).replaceAll("[^\\d]", ""), req.getParameter("cholesterolMilligrams" + i).replaceAll("[^\\d]", ""), req.getParameter("cholesterolPercentage" + i).replaceAll("[^\\d]", ""), req.getParameter("sodiumMilligrams" + i).replaceAll("[^\\d]", ""), req.getParameter("sodiumPercentage" + i).replaceAll("[^\\d]", ""), req.getParameter("totalCarbsGrams" + i).replaceAll("[^\\d]", ""),
+                    req.getParameter("totalCarbsPercentage" + i).replaceAll("[^\\d]", ""), req.getParameter("fiberGrams" + i).replaceAll("[^\\d]", ""), req.getParameter("fiberPercentage" + i).replaceAll("[^\\d]", ""), req.getParameter("sugarGrams" + i).replaceAll("[^\\d]", ""), req.getParameter("proteinGrams" + i).replaceAll("[^\\d]", ""));
+            nDP.setFood("SecretKeyFood", req.getParameter("name" + i), req.getParameter("servingSize" + i).replaceAll("[^\\d]", ""), req.getParameter("calories" + i).replaceAll("[^\\d]", ""), req.getParameter("fatCalories" + i).replaceAll("[^\\d]", ""), req.getParameter("totalFatGrams" + i).replaceAll("[^\\d]", ""), req.getParameter("totalFatPercentage" + i).replaceAll("[^\\d]", ""), req.getParameter("satFatGrams" + i).replaceAll("[^\\d]", ""),
+                    req.getParameter("satFatPercentage" + i).replaceAll("[^\\d]", ""), req.getParameter("cholesterolMilligrams" + i).replaceAll("[^\\d]", ""), req.getParameter("cholesterolPercentage" + i).replaceAll("[^\\d]", ""), req.getParameter("sodiumMilligrams" + i).replaceAll("[^\\d]", ""), req.getParameter("sodiumPercentage" + i).replaceAll("[^\\d]", ""), req.getParameter("totalCarbsGrams" + i).replaceAll("[^\\d]", ""),
+                    req.getParameter("totalCarbsPercentage" + i).replaceAll("[^\\d]", ""), req.getParameter("fiberGrams" + i).replaceAll("[^\\d]", ""), req.getParameter("fiberPercentage" + i).replaceAll("[^\\d]", ""), req.getParameter("sugarGrams" + i).replaceAll("[^\\d]", ""), req.getParameter("proteinGrams" + i).replaceAll("[^\\d]", ""));
+            i += 1;
+        } while (req.getParameter("name" + i) != null);
 
-        resp.sendRedirect("/intro.jsp");
+        resp.sendRedirect("");
+
     }
+
 }

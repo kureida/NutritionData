@@ -10,6 +10,17 @@ import java.io.IOException;
 public class GetServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        NutritionData nD = new NutritionData();
+        int i = 0;
+        do{
+            String name = req.getParameter("foodName"+i);
+            String sSize = req.getParameter("sSize"+i);
+            String typeofWeight = req.getParameter("typeofWeight"+i);
 
+
+
+            i++;
+        }while(req.getParameter("typeofWeight"+i)!=null);
+        resp.sendRedirect("intro.jsp");
     }
 }
