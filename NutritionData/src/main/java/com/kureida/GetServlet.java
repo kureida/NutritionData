@@ -15,8 +15,8 @@ public class GetServlet extends HttpServlet {
         do{
             String name = req.getParameter("foodName"+i);
             String sSize = req.getParameter("sSize"+i);
-            String typeofWeight = req.getParameter("typeofWeight"+i);
-
+            String typeofWeight = req.getParameter("typeofWeight"+i).replaceAll("[^\\d]", "");
+            String typeofFood = (req.getParameter("typeofFood"+i).equals("None")?"Food":req.getParameter("typeofFood"+i)).toLowerCase();
 
 
             i++;

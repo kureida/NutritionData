@@ -48,7 +48,7 @@ public class NutritionData {
                     String satFatPercentage, String cholesterolMilligrams, String cholesterolPercentage, String sodiumMilligrams, String sodiumPercentage, String totalCarbsGrams,
                     String totalCarbsPercentage, String fiberGrams, String fiberPercentage, String sugarGrams, String proteinGrams){
 
-        setFood((typeofFood.equals("Leave blank if unknown")? "Food": typeofFood), (name.equals("Name"))? "1234smash": name, Integer.parseInt((servingSize.equals(""))? "0" : servingSize ), Integer.parseInt((calories.equals(""))? "0" : calories ), Integer.parseInt((fatCalories.equals(""))? "0" : fatCalories ), Integer.parseInt((totalFatGrams.equals(""))? "0" : totalFatGrams ), Integer.parseInt((totalFatPercentage.equals(""))? "0" : totalFatPercentage ), Integer.parseInt((satFatGrams.equals(""))? "0" : satFatGrams ),
+        setFood((typeofFood.equals("Leave blank if unknown")? "Food": typeofFood).toLowerCase(), (name.equals("Name"))? "1234smash": name, Integer.parseInt((servingSize.equals(""))? "0" : servingSize ), Integer.parseInt((calories.equals(""))? "0" : calories ), Integer.parseInt((fatCalories.equals(""))? "0" : fatCalories ), Integer.parseInt((totalFatGrams.equals(""))? "0" : totalFatGrams ), Integer.parseInt((totalFatPercentage.equals(""))? "0" : totalFatPercentage ), Integer.parseInt((satFatGrams.equals(""))? "0" : satFatGrams ),
         Integer.parseInt((satFatPercentage.equals(""))? "0" : satFatPercentage ), Integer.parseInt((cholesterolMilligrams.equals(""))? "0" : cholesterolMilligrams ), Integer.parseInt((cholesterolPercentage.equals(""))? "0" : cholesterolPercentage ), Integer.parseInt((sodiumMilligrams.equals(""))? "0" : sodiumMilligrams ), Integer.parseInt((sodiumPercentage.equals(""))? "0" : sodiumPercentage ), Integer.parseInt((totalCarbsGrams.equals(""))? "0" : totalCarbsGrams ),
         Integer.parseInt((totalCarbsPercentage.equals(""))? "0" : totalCarbsPercentage ), Integer.parseInt((fiberGrams.equals(""))? "0" : fiberGrams ), Integer.parseInt((fiberPercentage.equals(""))? "0" : fiberPercentage ), Integer.parseInt((sugarGrams.equals(""))? "0" : sugarGrams ), Integer.parseInt((proteinGrams.equals(""))? "0" : proteinGrams ));
     }
@@ -89,7 +89,7 @@ public class NutritionData {
         ArrayList<String> kindList = new ArrayList<String>();
         for(Entity entity : entityIterable) {
             //This line is to be commented out to see google defined queries
-            if(!entity.getKey().getName().contains("_") && !entity.getKey().getName().equals("SecretKeyFood"))
+            if(!entity.getKey().getName().contains("_") && !entity.getKey().getName().equals("SecretKeyFood".toLowerCase()))
             kindList.add(entity.getKey().getName());
 
         }
@@ -104,7 +104,7 @@ public class NutritionData {
         String kindList = "";
         for(Entity entity : entityIterable) {
             //This line is to be commented out to see google defined queries
-            if(!entity.getKey().getName().contains("_") && !entity.getKey().getName().equals("SecretKeyFood"))
+            if(!entity.getKey().getName().contains("_") && !entity.getKey().getName().equals("SecretKeyFood".toLowerCase()))
             kindList += "\"" + entity.getKey().getName()+"\",";
         }
         return (kindList.length() > 2 ) ? kindList.substring(0, kindList.length()-1):"";

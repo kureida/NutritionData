@@ -77,5 +77,13 @@ $(function () {
 
 function addIngredient(){
     ingredientIterator+=1;
-    $('#additionalIngredients').append('<br>Ingredient Name: <input type="text" name="foodName'+ingredientIterator+'"><br><br><input type="text" onfocus="inputFocus(this)" name="sSize'+ingredientIterator+'" onblur="inputBlur(this)" style="color:#888;" value="Enter Serving Size">   <select name="typeofWeight'+ingredientIterator+'"><option value="g" >grams</option><option value="oz">ounces</option></select><br>');
+    $('#additionalIngredients').append('<br>Ingredient Name: <input type="text" name="foodName'+ingredientIterator+'"> Type: <select id="typeofFood'+ingredientIterator+'" name="typeofFood'+ingredientIterator+'">  </select><script>addFoodType()</script><br><br><input type="text" onfocus="inputFocus(this)" name="sSize'+ingredientIterator+'" onblur="inputBlur(this)" style="color:#888;" value="Enter Serving Size">   <select name="typeofWeight'+ingredientIterator+'"><option value="g" >grams</option><option value="oz">ounces</option></select><br>');
+}
+function addFoodType(){
+    var temp = '';
+    temp+= '<option value="None">None</option>';
+    for(var i = 0; i < kindList.length; i++){
+        temp+='<option value="'+kindList[i]+'">'+kindList[i]+'</option>';
+    }
+    $('#typeofFood'+ingredientIterator).append(temp);
 }

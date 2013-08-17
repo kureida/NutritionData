@@ -59,8 +59,14 @@
                 <form action="/retrieve" method="get">
                     Recipe Ingredient(s) <br>
                     Ingredient Name: <input type="text" name="foodName0">
+                    Type (used for faster searches): <select id="typeofFood0" name="typeofFood0">
+
+                    </select>
+                    <script>addFoodType()</script>
+
                     <br>
                     <br>
+
                     <input type="text" onfocus="inputFocus(this)" name="sSize0" onblur="inputBlur(this)" style="color:#888;" value="Enter Serving Size">
                     <select name="typeofWeight0">
                         <option value="g" >grams</option>
