@@ -20,7 +20,21 @@ public class GetServlet extends HttpServlet {
         int i = 0;
         do {
             String name = req.getParameter("foodName" + i);
-            sSize = (req.getParameter("sSize" + i).replaceAll("[^\\d]", "").equals("")) ? "0" : req.getParameter("sSize" + i).replaceAll("[^\\d]","");
+            sSize = (req.getParameter("sSize" + i).replaceAll("[^\\d.]", "").equals("")) ? "0" : req.getParameter("sSize" + i).replaceAll("[^\\d]","");
+            int tempC = 0;
+            String tempSSize = "";
+            for(int k = 0; k < sSize.length(); k++){
+                if(tempC == 1){
+                    tempSSize += sSize.substring(k).replaceAll("[.]", "");
+                    sSize = tempSSize;
+                    k = sSize.length();
+                } else {
+                    tempSSize += sSize.charAt(k);
+                    if(sSize.charAt(k) == '.'){
+                     tempC +=1;
+                    }
+                }
+            }
             typeofWeight = req.getParameter("typeofWeight" + i);
             String typeofFood = (req.getParameter("typeofFood" + i).equals("None") ? "Food" : req.getParameter("typeofFood" + i)).toLowerCase();
             entityArrayList.add(nD.querySpecificFood(name, typeofFood));

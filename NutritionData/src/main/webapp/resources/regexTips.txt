@@ -1,0 +1,2 @@
+^(?!.*\bhello\b.*\bhello\b).*\bhello\b.*$
+    Matches hello once in a line, if hello shows up twice doesn't catch

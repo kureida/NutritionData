@@ -55,7 +55,7 @@ NutritionData
 				- 3DKB. Click on the 'Key' textbox and paste (Ctrl-V) the SSH key that you copied to the CLIPboard.
 				- 3DKC. Click 'Add key'
 
-##Setting path for maven & java :
+##Setting path for maven & java
 	1. Open the start menu
 	2. Right click on 'Computer'
 	3. Click 'Properties'
@@ -135,3 +135,5 @@ NutritionData
 		- 12BC. To launch app: 
 			- 12BCA. Click on appengine:devserver to launch to http://localhost:8080
 			- 12BCB. Click on appengine:update to launch to http://newtritiondata.appspot.com (MUST HAVE DEVELOPER PERMISSIONS)
+			
+			Addition Information: mvn clean install, mvn build, File->Invalidate Caches, File->Settings->Maven->Import my Maven project using Maven3
