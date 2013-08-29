@@ -58,7 +58,7 @@
             <div id="tt-1">
                 <form action="/retrieve" method="get">
                     Recipe Ingredient(s) <br>
-                    Ingredient Name: <input type="text" name="foodName0">
+                    Ingredient Name: <input type="text" name="foodName0"><br><br>
                     Type (used for faster searches): <select id="typeofFood0" name="typeofFood0">
 
                     </select>
