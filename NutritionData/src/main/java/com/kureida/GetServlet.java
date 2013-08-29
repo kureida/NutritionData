@@ -30,10 +30,9 @@ public class GetServlet extends HttpServlet {
             int j = 0;
             Entity item;
             while ((item = entityArrayList.get(j)) != null) {
-                item.getKey().getName();
+                String iName = item.getKey().getName();
                 double servingSize = Double.parseDouble((String) item.getProperty("servingSize"));
-                double gramConversion = typeofWeight.equals("grams") ? 1 : 28.3495; //ounces are assumed to be 28.3495 grams or grams to be .035274 ounces
-                double proportionateFactor = (Double.parseDouble(sSize) * gramConversion)/servingSize;
+                double proportionateFactor = (Double.parseDouble(sSize) * (typeofWeight.equals("grams") ? 1 : 28.3495))/servingSize; //ounces are assumed to be 28.3495 grams or grams to be .035274 ounces
                 double calories = Double.parseDouble((String) item.getProperty("calories"))*proportionateFactor;
                 double fatCalories = Double.parseDouble((String) item.getProperty("fatCalories"))*proportionateFactor;
                 double totalFatGrams = Double.parseDouble((String) item.getProperty("totalFatGrams"))*proportionateFactor;
@@ -51,6 +50,7 @@ public class GetServlet extends HttpServlet {
                 double sugarGrams = Double.parseDouble((String) item.getProperty("sugarGrams"))*proportionateFactor;
                 double proteinGrams = Double.parseDouble((String) item.getProperty("proteinGrams"))*proportionateFactor;
                 //put data into cookie for processing
+                //when exporting data, use sSize, typeofWeight from initial params instead of servingSize
             }
         }
         resp.sendRedirect("intro.jsp");
